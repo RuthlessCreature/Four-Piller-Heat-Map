@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>时间结构热力分析界面</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="title-group">
+        <h1>时间结构热力分析界面</h1>
+        <p class="subtitle">结构呈现 · 风险暴露 · 误读约束</p>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="panel input-panel">
+        <h2>输入</h2>
+        <div class="input-grid">
+          <label>
+            出生日期
+            <input type="date" id="birthDate" />
+          </label>
+          <label>
+            出生时间
+            <input type="time" id="birthTime" />
+          </label>
+          <label>
+            日历类型
+            <select id="calendarType">
+              <option value="solar">公历</option>
+              <option value="lunar">农历</option>
+            </select>
+          </label>
+          <label>
+            性别
+            <select id="gender">
+              <option value="male">男</option>
+              <option value="female">女</option>
+            </select>
+          </label>
+        </div>
+        <div class="input-note">
+          <p>本系统采用节气换日、北京时间排盘规则</p>
+          <p>所有分析基于时间结构模型，不构成任何结果承诺</p>
+        </div>
+        <button id="generateBtn" class="primary-btn">计算时间结构热力图</button>
+        <div class="birth-pillars" id="birthPillars">出生四柱：—</div>
+      </section>
+
+      <section class="panel heatmap-panel">
+        <div class="panel-header">
+          <h2>时间结构热力图</h2>
+          <div class="definition" id="heatmapDefinition">
+            颜色强度表示：该时间层级中某类结构被激活的相对强度；不表示好坏，不表示结果概率
+          </div>
+        </div>
+        <div class="view-controls">
+          <button id="backBtn" class="ghost-btn" disabled>返回上一级</button>
+          <div class="view-label" id="viewLabel">年视图</div>
+          <div class="year-nav" id="yearNav">
+            <button id="prevYear" class="ghost-btn">◀</button>
+            <span id="yearDisplay">—</span>
+            <button id="nextYear" class="ghost-btn">▶</button>
+          </div>
+        </div>
+        <div id="heatmapGrid" class="heatmap-grid"></div>
+        <div id="heatmapStatus" class="muted"></div>
+      </section>
+
+      <section class="panel behavior-panel">
+        <h2>结构宜忌提示（非建议）</h2>
+        <div class="behavior-explain">
+          <p>风险暴露：指该类行为在当前时间结构下更容易受到波动或承载不足影响，表现为不确定性或结构阻力上升。</p>
+          <p>宜/慎/忌仅表示相对强弱（宜=较低，慎=中等，忌=较高），不构成建议或预测。</p>
+        </div>
+        <div id="behaviorNote" class="muted">
+          请下钻到具体时间层级后查看风险提示。
+        </div>
+        <ul id="behaviorList" class="behavior-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
