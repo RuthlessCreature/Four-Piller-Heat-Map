@@ -1,0 +1,42 @@
+version: 1
+name: Four-Piller-Heat-Map
+summary: >-
+  ```bash cd backend pip install -r requirements.txt uvicorn app.main:app --reload ```
+  默认端口：`http://localhost:8000` 建议使用静态服务器（避免 file:// 跨域限制）： ```bash cd frontend python -m http.server
+  5173 ``` 浏览器访问：`http://localhost:5173`
+status: active
+phase: building
+tags:
+  - readme
+features:
+  - id: INF-FEAT-1
+    title: 输入出生信息（公历/农历、日期、时间、性别）
+    status: unknown
+  - id: INF-FEAT-2
+    title: 生成热力图并按 年 → 月 → 日 → 时 下钻
+    status: unknown
+  - id: INF-FEAT-3
+    title: 输出行为风险提示（仅结构风险暴露）
+    status: unknown
+requirements:
+  - id: REQ-1
+    title: Describe the current requirement
+    status: todo
+    priority: medium
+    summary: Replace this generated placeholder with the real requirement.
+progress:
+  summary: 0 done, 0 in progress, 0 blocked, 3 pending.
+  counts:
+    planned: 3
+    doing: 0
+    done: 0
+    blocked: 0
+blockers: []
+next_actions:
+  - Review local uncommitted changes and decide whether to commit them.
+links:
+  - label: repo
+    value: https://github.com/RuthlessCreature/Four-Piller-Heat-Map.git
+meta:
+  source: codex-maintained
+  last_reviewed_at: '2026-03-30'
